@@ -1,0 +1,28 @@
+input example *-57
+error example *+2-
+
+traverse through input
+
+    if input item is a operator:
+        add operator to a stack
+
+    if input is a number:
+        if queue empty:
+            add number to a queue
+
+        else:
+            operator = pop from stack
+            number 1 = queue number
+            number t2 = current number
+
+            num1 (operator) num2
+            add num to queue
+
+
+
+if queue or stack not empty:
+    we have a error 
+
+else
+    return the result
+    
