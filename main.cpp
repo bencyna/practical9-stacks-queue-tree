@@ -1,5 +1,6 @@
 #include <iostream>
 #include "PrefixExpression.h"
+#include "Node.h"
 
 using namespace std;
 
