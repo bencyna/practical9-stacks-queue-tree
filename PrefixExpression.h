@@ -10,7 +10,7 @@ public:
     ~PrefixExpression();
 
 private:
-    // not sure
+    // we'll need a node class perhaps and have a right and left on it. We will create a binary tree here
 };
 
 #endif

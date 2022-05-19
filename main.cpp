@@ -1,8 +1,15 @@
 #include <iostream>
+#include "PrefixExpression.h"
 
 using namespace std;
 
 int main() {
-    cout << "Hello World" << endl;
+
+    // cin of input 
+
+    // input goes into function in prefixExpression
+
+    // Function returns the correct value for
+
     return 0; 
 }
