@@ -6,15 +6,18 @@
 class Node
 {
 public:
-    Node(int data, Node * next);
+    Node(int data, Node * left, Node * right);
     int getData();
     void setData(int data);
-    Node * getNext();
-    void setNext(Node*next);
+    Node * getLeft();
+    void setLeft(Node*left);
+     Node * getRight();
+    void setRight(Node*right);
 
 private:
     int data;
-    Node * next;
+    Node * left;
+    Node * right;
 };
 
 #endif

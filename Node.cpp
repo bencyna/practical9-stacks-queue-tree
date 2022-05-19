@@ -1,9 +1,9 @@
 #include "Node.h"
 
-Node::Node(int data, Node * next)
+Node::Node(int data, Node * left, Node * right)
 {
     this->data = data;
-    this->next = next;
+    this->left = left;
 }
 
 int Node::getData()
@@ -15,11 +15,20 @@ void Node::setData(int dataInp){
     data = dataInp;
 }
 
-Node * Node::getNext()
+Node * Node::getLeft()
 {
-    return next;
+    return left;
 }
 
-void Node::setNext(Node * next){
-    this->next = next;
+void Node::setLeft(Node * left){
+    this->left = left;
+}
+
+Node * Node::getRight()
+{
+    return right;
+}
+
+void Node::setRight(Node * right){
+    this->right = right;
 }
