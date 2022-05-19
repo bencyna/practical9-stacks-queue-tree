@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <string>
+
 class Node
 {
 public:
@@ -15,7 +17,7 @@ public:
     void setRight(Node*right);
 
 private:
-    int data;
+    std::string data;
     Node * left;
     Node * right;
 };
