@@ -5,7 +5,7 @@ using namespace std;
 
 PrefixExpression::PrefixExpression(string operation)
 {
-    head = NULL;
+    a
 }
 
 PrefixExpression::~PrefixExpression()

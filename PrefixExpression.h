@@ -5,7 +5,7 @@
 
 #include "Node.h"
 #include <string>
-
+#include <stack>  
 
 class PrefixExpression
 {
@@ -15,6 +15,7 @@ public:
 
 private:
     Node * head;
+    std::stack<std::string> stack; 
 };
 
 #endif
