@@ -9,7 +9,7 @@ class Node
 {
 public:
     Node(int data, Node * left, Node * right);
-    int getData();
+    std::string getData();
     void setData(int data);
     Node * getLeft();
     void setLeft(Node*left);

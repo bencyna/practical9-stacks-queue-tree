@@ -4,11 +4,13 @@
 #pragma once
 
 #include "Node.h"
+#include <string>
+
 
 class PrefixExpression
 {
 public:
-    PrefixExpression();
+    PrefixExpression(std::string operation);
     ~PrefixExpression();
 
 private:

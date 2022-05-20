@@ -1,7 +1,9 @@
 #include "PrefixExpression.h"
 #include <cstddef>
 
-PrefixExpression::PrefixExpression()
+using namespace std;
+
+PrefixExpression::PrefixExpression(string operation)
 {
     head = NULL;
 }

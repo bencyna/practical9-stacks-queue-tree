@@ -1,12 +1,14 @@
 #include "Node.h"
 
+using namespace std;
+
 Node::Node(int data, Node * left, Node * right)
 {
     this->data = data;
     this->left = left;
 }
 
-int Node::getData()
+string Node::getData()
 {
     return data;
 }
