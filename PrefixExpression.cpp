@@ -5,7 +5,7 @@ using namespace std;
 
 PrefixExpression::PrefixExpression(string operation)
 {
-    a
+    // loop through operation to create the binary tree structure add to stack, if number remove and make node
 }
 
 PrefixExpression::~PrefixExpression()
