@@ -7,6 +7,17 @@
     }
 
     Node * Stack::pop() {
+        Node * temp = tail;
+
+        Node * prev = NULL;
+        for (Node * n = head; n != NULL; n = n->getLeft()) {
+            if (n->getLeft() == NULL) {
+                // delete current node
+                delete n;
+                tail = prev;
+            }
+        }
+
         return tail;
     }
     
