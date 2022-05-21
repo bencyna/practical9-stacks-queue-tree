@@ -8,6 +8,7 @@
 class Stack
 {
 public:
+    Stack();
     Node * pop();
     void push(Node * node);
     bool isEmpty();
