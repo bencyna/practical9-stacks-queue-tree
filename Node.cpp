@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Node::Node(int data, Node * left, Node * right)
+Node::Node(string data, Node * left, Node * right)
 {
     this->data = data;
     this->left = left;

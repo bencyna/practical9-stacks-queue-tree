@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include <iostream> //need to remove
 
 
     Stack::Stack() {
@@ -10,23 +11,40 @@
         Node * temp = tail;
 
         Node * prev = NULL;
-        for (Node * n = head; n != NULL; n = n->getLeft()) {
-            if (n->getLeft() == NULL) {
-                // delete current node
-                delete n;
-                tail = prev;
-            }
-        }
 
-        return tail;
+        for (Node * n = head; n != NULL; n = n->getLeft()) {
+
+            if (n->getLeft() == NULL) {
+
+                // delete current node         
+                tail = prev;
+                if (prev != NULL) {
+                    prev->setLeft(NULL);
+                }
+            }
+            else {
+                prev = n;
+            }
+
+        }
+        return temp;
+        // because we are not deleting the node, this may cause issues later
     }
     
     void Stack::push(Node * node) {
         // make temp for tail pointer
         Node * temp =  tail;
-        temp->setLeft(node);
+
+        if (temp != NULL) {
+            temp->setLeft(node);
+        }
+        if (head == NULL && temp != NULL) {
+            head = temp;
+        }
+
         // set tail to equal the new node
         tail = node;
+
     }
 
 
