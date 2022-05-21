@@ -12,8 +12,10 @@
     
     void Stack::push(Node * node) {
         // make temp for tail pointer
-        Node * temp =  
+        Node * temp =  tail;
+        temp->setLeft(node);
         // set tail to equal the new node
+        tail = node;
     }
 
 
