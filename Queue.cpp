@@ -4,6 +4,7 @@
 
     Queue::Queue() {
         head = NULL;
+        tail = NULL;
     }
 
     Node * Queue::dequeue() {
@@ -18,10 +19,11 @@
     void Queue::enqueue(Node * node) {
         if (head == NULL) {
             head = node;
+            tail = node;
         }
         else {
-            node->setLeft(head);
-            head = node;
+            tail->setLeft(node);
+            tail = node;
         }
     }
 
