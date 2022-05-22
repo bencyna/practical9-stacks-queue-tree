@@ -7,12 +7,14 @@
 #include <string>
 #include "Stack.h"
 #include "Queue.h"
+#include <string>
 
 class PrefixExpression
 {
 public:
     PrefixExpression(std::string operation);
     ~PrefixExpression();
+    std::string calculate();
 
 private:
     Node * head;
