@@ -1,5 +1,6 @@
 #include "PrefixExpression.h"
 #include <cstddef>
+#include <iostream> // need to remove 
 
 using namespace std;
 
@@ -12,16 +13,12 @@ PrefixExpression::PrefixExpression(string operation)
             // add to stack
             std::string s(1, operation[i]);
             Node * newNode = new Node(s, NULL, NULL);
-
-            // Sample input:  * - 5 6 7
-            // Sample output:  (5 - 6) * 7 = -7
-
-            // [*-567] queue
-            // [7, [-(5, 6)]] //stack
-
         }
         else {
             // pop top two items from the stack and build mini tree
+            Node * item1 = stack.pop();
+            Node * item2 = stack.pop();
+            cout << item1->getData() << " " << item2->getData() << endl;
         }
     }
 }
