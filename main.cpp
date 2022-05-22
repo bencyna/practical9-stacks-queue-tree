@@ -22,7 +22,7 @@ int main() {
 
     Node * temp = stack.pop();
     cout << temp->getData() << endl;
-    //  expected
+    //  * expected
     Node * temp2 = stack.pop();
     cout << temp2->getData() << endl;
     // 2 expected

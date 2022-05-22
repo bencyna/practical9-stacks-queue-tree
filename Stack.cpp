@@ -1,9 +1,7 @@
 #include "Stack.h"
-#include <iostream> //need to remove
 
 
     Stack::Stack() {
-        tail = NULL;
         head = NULL;
     }
 
@@ -24,9 +22,6 @@
             node->setLeft(head);
             head = node;
         }
-
-        tail = node;
-
     }
 
 

@@ -3,14 +3,19 @@
 
 #pragma once
 
+#include "Node.h"
+
 class Queue
 {
 public:
     Queue();
-    ~Queue();
+    Node * dequeue();
+    void enqueue(Node * node);
+    bool isEmpty();
+
 
 private:
-
+    Node * head;
 };
 
 #endif
