@@ -32,3 +32,7 @@
 
         return false;
     }
+
+    Node * Stack::peak() {
+        return head;
+    }

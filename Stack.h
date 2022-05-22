@@ -12,6 +12,7 @@ public:
     Node * pop();
     void push(Node * node);
     bool isEmpty();
+    Node * peak();
 
 
 private:
