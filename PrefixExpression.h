@@ -5,8 +5,8 @@
 
 #include "Node.h"
 #include <string>
-#include <Stack.h>  
-#include <Queue.h>  
+#include "Stack.h"
+#include "Queue.h"
 
 class PrefixExpression
 {
