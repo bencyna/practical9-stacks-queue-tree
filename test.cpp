@@ -4,11 +4,10 @@
 #include "Node.h"
 #include "Stack.h"
 
-
 using namespace std;
 
 int test() {
-    // TEST for stack
+      // TEST for stack
 
     Stack stack;
 
@@ -29,5 +28,6 @@ int test() {
     Node * temp3 = stack.pop();
     cout << temp3->getData() << endl;
     // 1 expected
-        return 0; 
+
+   return 0;
 }
