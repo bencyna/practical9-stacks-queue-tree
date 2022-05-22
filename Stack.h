@@ -10,7 +10,6 @@ class Stack
 public:
     Stack();
     Node * pop();
-    // i have made this a queue
     void push(Node * node);
     bool isEmpty();
 

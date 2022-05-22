@@ -32,17 +32,14 @@
     }
     
     void Stack::push(Node * node) {
-        // make temp for tail pointer
-        Node * temp =  tail;
-
-        if (temp != NULL) {
-            temp->setLeft(node);
+        if (head == NULL) {
+            head = node;
         }
-        if (head == NULL && temp != NULL) {
-            head = temp;
+        else {
+            node->setLeft(head);
+            head = node;
         }
 
-        // set tail to equal the new node
         tail = node;
 
     }
