@@ -10,7 +10,7 @@
     Node * Queue::dequeue() {
         Node * temp = head;
 
-        head = head->getLeft();
+        head = head->getNext();
 
         return temp;
         // because we are not deleting the node, this may cause issues later
@@ -22,7 +22,7 @@
             tail = node;
         }
         else {
-            tail->setLeft(node);
+            tail->setNext(node);
             tail = node;
         }
     }

@@ -13,13 +13,15 @@ public:
     void setData(int data);
     Node * getLeft();
     void setLeft(Node*left);
-     Node * getRight();
+    Node * getRight();
     void setRight(Node*right);
-
+    Node * getNext();
+    void setNext(Node*next);
 private:
     std::string data;
     Node * left;
     Node * right;
+    Node * next;
 };
 
 #endif

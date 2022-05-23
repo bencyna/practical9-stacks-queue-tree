@@ -42,13 +42,13 @@ int test() {
     queue.enqueue(node6);
 
     Node * temp4 = queue.dequeue();
-    cout << temp->getData() << endl;
+    cout << temp4->getData() << endl;
     //  1 expected
     Node * temp5 = queue.dequeue();
-    cout << temp2->getData() << endl;
+    cout << temp5->getData() << endl;
     // 2 expected
     Node * temp6 = queue.dequeue();
-    cout << temp3->getData() << endl;
+    cout << temp6->getData() << endl;
     // * expected
 
    return 0;

@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include <iostream> //need to remove
 
 
     Stack::Stack() {
@@ -8,7 +9,7 @@
     Node * Stack::pop() {
         Node * temp = head;
 
-        head = head->getLeft();
+        head = head->getNext();
 
         return temp;
         // because we are not deleting the node, this may cause issues later
@@ -19,7 +20,7 @@
             head = node;
         }
         else {
-            node->setLeft(head);
+            node->setNext(head);
             head = node;
         }
     }

@@ -19,7 +19,7 @@ public:
 private:
     Node * head;
     Stack stack; 
-    Queue queue;
+    Stack stack2;
 };
 
 #endif

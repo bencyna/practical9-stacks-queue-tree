@@ -5,8 +5,8 @@
 using namespace std;
 
 string PrefixExpression::calculate() {
-    cout << "hello" << endl;
-    return head->getData();
+    // in fix expression
+    return head->getRight()->getData();
 }
 
 PrefixExpression::PrefixExpression(string operation)
@@ -24,48 +24,28 @@ PrefixExpression::PrefixExpression(string operation)
     // current stack = "756-*"
 
     while (!stack.isEmpty()) {
-        Node * currentNode = stack.pop();
+        Node * currentNode = stack.pop();// *
         string currentNodeData = currentNode->getData();
         if (currentNodeData == "+" || currentNodeData == "-" || currentNodeData == "*" || currentNodeData == "/") {
-            Node * number1 = queue.dequeue();
-            if (queue.isEmpty()) {
-                head = number1;
-                return;
-            }
-            Node * number2 = queue.dequeue();
-
+            Node * number1 = stack2.pop(); //[-]
+            // if (stack2.isEmpty()) {
+            //     cout << "stack is empty now: " << number1->getData() << endl;
+            //     head = number1;
+            //     return;
+            // }
+            Node * number2 = stack2.pop(); //7
             // create mini tree
             Node * op = new Node(currentNodeData, number1, number2);
-            queue.enqueue(op);
+            stack2.push(op);
         }
         else if (currentNodeData.find_first_not_of("0123456789") == string::npos) {
-            queue.enqueue(currentNode);
+            stack2.push(currentNode);
         }
     }
-
-    // queue = "756-*" first in first out = 7
-    // for (Node * i = queue.dequeue(); i != NULL; i = queue.dequeue()) {
-    //     cout << i->getData() << endl;
-    //     string currentNodeData = i->getData();
-    //     if (currentNodeData == "+" || currentNodeData == "-" || currentNodeData == "*" || currentNodeData == "/") {
-    //         // pop top two items from the stack and build mini tree
-
-    //         Node * number1 = queue.dequeue();
-    //         if (queue.isEmpty()) {
-    //             head = number1;
-    //             return;
-    //         }
-    //         Node * number2 = queue.dequeue();
-
-    //         // create mini tree
-    //         Node * op = new Node(currentNodeData, number1, number2);
-    //         queue.enqueue(op);
-    //     }
-    //     else if (currentNodeData.find_first_not_of("0123456789") == string::npos) {
-    //         queue.enqueue(new Node(currentNodeData, NULL, NULL));
-    //     }
-    // }
-
+    // tree stack1 should only have 1 item in it, if not then it is an invalid expression
+    Node * tree = stack2.pop(); //[-]
+    head = tree;
+    return;
 }
 
 PrefixExpression::~PrefixExpression()
