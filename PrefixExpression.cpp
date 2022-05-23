@@ -8,13 +8,23 @@ string DFS(Node * currentNode) {
     if (currentNode == NULL) {
         return "";
     }
-    return DFS(currentNode->getLeft()) + currentNode->getData() + DFS(currentNode->getRight());
+
+    // if we see a - or + we add open parenthatis, do everything on right, then add close parenthasis
+    string currentNodeData = currentNode->getData();
+
+    if (currentNodeData == "+" || currentNodeData == "-") {
+        return "(" + DFS(currentNode->getLeft()) + currentNodeData + DFS(currentNode->getRight()) + ")";
+    }
+
+    return DFS(currentNode->getLeft()) + currentNodeData + DFS(currentNode->getRight());
 }
 
 string PrefixExpression::calculate() {
     // in fix expression
     string expression = DFS(head);
     
+    // use queue to create a new expression in int value using shunting yard algorithm
+
 
 
     return expression;
@@ -42,12 +52,6 @@ PrefixExpression::PrefixExpression(string operation)
            
             Node * number2 = stack2.pop(); //7
 
-            // if both children are ints & curren val is - or +, we need to add () to number1 and 2
-            if (number1->getData().find_first_not_of("0123456789") == string::npos && number2->getData().find_first_not_of("0123456789") == string::npos && (currentNodeData == "+" || currentNodeData == "-"))
-            {
-                number1->setData("(" + number1->getData());
-                number2->setData(number2->getData() + ")");
-            }
             // create mini tree
             Node * op = new Node(currentNodeData, number1, number2);
             stack2.push(op);
