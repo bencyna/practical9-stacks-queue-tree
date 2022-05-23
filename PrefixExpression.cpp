@@ -21,7 +21,7 @@ string DFS(Node * currentNode) {
 
 string PrefixExpression::calculate() {
     // in fix expression
-    string expression = DFS(head);
+    string expression = DFS(head);  
     
     // use queue to create a new expression in int value using shunting yard algorithm
 
