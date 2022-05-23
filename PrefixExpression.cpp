@@ -1,12 +1,22 @@
 #include "PrefixExpression.h"
 #include <cstddef>
-#include <iostream>
+// #include <iostream>
 
 using namespace std;
 
+string DFS(Node * currentNode) {
+    if (currentNode == NULL) {
+        return "";
+    }
+    return DFS(currentNode->getLeft()) + " " + currentNode->getData() + " " + DFS(currentNode->getRight());
+}
+
 string PrefixExpression::calculate() {
     // in fix expression
-    return head->getRight()->getData();
+    string expression = DFS(head);
+
+
+    return expression;
 }
 
 PrefixExpression::PrefixExpression(string operation)
@@ -46,9 +56,4 @@ PrefixExpression::PrefixExpression(string operation)
     Node * tree = stack2.pop(); //[-]
     head = tree;
     return;
-}
-
-PrefixExpression::~PrefixExpression()
-{
-
 }
