@@ -10,7 +10,7 @@ class Node
 public:
     Node(std::string data, Node * left, Node * right);
     std::string getData();
-    void setData(int data);
+    void setData(std::string data);
     Node * getLeft();
     void setLeft(Node*left);
     Node * getRight();

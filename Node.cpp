@@ -15,7 +15,7 @@ string Node::getData()
     return data;
 }
 
-void Node::setData(int dataInp){
+void Node::setData(string dataInp){
     data = dataInp;
 }
 

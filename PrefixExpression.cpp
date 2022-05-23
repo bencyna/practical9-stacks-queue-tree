@@ -43,8 +43,11 @@ PrefixExpression::PrefixExpression(string operation)
             Node * number2 = stack2.pop(); //7
 
             // if both children are ints & curren val is - or +, we need to add () to number1 and 2
-            
-
+            if (number1->getData().find_first_not_of("0123456789") == string::npos && number2->getData().find_first_not_of("0123456789") == string::npos && (currentNodeData == "+" || currentNodeData == "-"))
+            {
+                number1->setData("(" + number1->getData());
+                number2->setData(number2->getData() + ")");
+            }
             // create mini tree
             Node * op = new Node(currentNodeData, number1, number2);
             stack2.push(op);
