@@ -14,6 +14,8 @@ string DFS(Node * currentNode) {
 string PrefixExpression::calculate() {
     // in fix expression
     string expression = DFS(head);
+    
+
 
     return expression;
 }
@@ -37,12 +39,12 @@ PrefixExpression::PrefixExpression(string operation)
         string currentNodeData = currentNode->getData();
         if (currentNodeData == "+" || currentNodeData == "-" || currentNodeData == "*" || currentNodeData == "/") {
             Node * number1 = stack2.pop(); //[-]
-            // if (stack2.isEmpty()) {
-            //     cout << "stack is empty now: " << number1->getData() << endl;
-            //     head = number1;
-            //     return;
-            // }
+           
             Node * number2 = stack2.pop(); //7
+
+            // if both children are ints & curren val is - or +, we need to add () to number1 and 2
+            
+
             // create mini tree
             Node * op = new Node(currentNodeData, number1, number2);
             stack2.push(op);
