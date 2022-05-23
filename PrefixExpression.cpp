@@ -8,13 +8,12 @@ string DFS(Node * currentNode) {
     if (currentNode == NULL) {
         return "";
     }
-    return DFS(currentNode->getLeft()) + " " + currentNode->getData() + " " + DFS(currentNode->getRight());
+    return DFS(currentNode->getLeft()) + currentNode->getData() + DFS(currentNode->getRight());
 }
 
 string PrefixExpression::calculate() {
     // in fix expression
     string expression = DFS(head);
-
 
     return expression;
 }
