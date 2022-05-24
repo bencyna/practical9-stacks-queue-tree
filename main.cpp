@@ -19,7 +19,7 @@ int main() {
     // string operation;
     // getline(std::cin, operation);
 
-    // input goes into function in prefixExpression
+    // input goes into function in prefixExpresssion
 
     // Function returns the correct value for
 
