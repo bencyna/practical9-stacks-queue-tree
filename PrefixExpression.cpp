@@ -1,6 +1,6 @@
 #include "PrefixExpression.h"
 #include <cstddef>
-// #include <iostream>
+#include <iostream> // need to remove this
 
 
 using namespace std;
@@ -38,12 +38,15 @@ int toInt(string num) {
     return number;
 }
 
+int calculateHelper(Node * head);
+
 string PrefixExpression::calculate() {
     // in fix expression
     string expression = DFS(head);  
     
+    int result = calculateHelper(head);
 
-
+    cout << result << endl;
 
     return expression;
 }
