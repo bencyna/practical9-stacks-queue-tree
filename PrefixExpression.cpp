@@ -38,7 +38,9 @@ int toInt(string num) {
     return number;
 }
 
-int calculateHelper(Node * head);
+int calculateHelper(Node * head) {
+    return 1;
+}
 
 string PrefixExpression::calculate() {
     // in fix expression
