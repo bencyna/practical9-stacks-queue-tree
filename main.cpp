@@ -8,8 +8,10 @@
 using namespace std;
 
 int main() {
-
-   PrefixExpression * prefixExpression = new PrefixExpression("* - 5 6 7");
+  
+   string expressionStr;
+   getline(cin, expressionStr);
+   PrefixExpression * prefixExpression = new PrefixExpression(expressionStr);
    cout << prefixExpression->calculate() << endl; 
 
     // stack.push()
