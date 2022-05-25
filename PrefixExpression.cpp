@@ -48,6 +48,24 @@ int calculateHelper(Node * node) {
     if (!node->getLeft() && !node->getRight()) {
         return toInt(node->getData());
     }
+
+    // if operator, need to calc each sub tree
+    int leftValue = calculateHelper(node->getLeft());
+    int rightValue = calculateHelper(node->getRight());
+
+    // apply operator
+    if (node->getData() =="+") {
+        return leftValue + rightValue;
+    }
+    if (node->getData() =="-") {
+        return leftValue - rightValue;
+    }
+    if (node->getData() =="*") {
+        return leftValue * rightValue;
+    }
+
+    return leftValue / rightValue;
+
 }
 
 string PrefixExpression::calculate() {
