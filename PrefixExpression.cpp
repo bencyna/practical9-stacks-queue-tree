@@ -44,8 +44,11 @@ int calculateHelper(Node * node) {
         return 0;
     }
 
+    string nodeData = node->getData();
+
     // node is int
     if (!node->getLeft() && !node->getRight()) {
+        // if node isnt an int, we have an error
         return toInt(node->getData());
     }
 
@@ -54,13 +57,13 @@ int calculateHelper(Node * node) {
     int rightValue = calculateHelper(node->getRight());
 
     // apply operator
-    if (node->getData() =="+") {
+    if (nodeData =="+") {
         return leftValue + rightValue;
     }
-    if (node->getData() =="-") {
+    if (nodeData =="-") {
         return leftValue - rightValue;
     }
-    if (node->getData() =="*") {
+    if (nodeData =="*") {
         return leftValue * rightValue;
     }
 
@@ -69,6 +72,10 @@ int calculateHelper(Node * node) {
 }
 
 string PrefixExpression::calculate() {
+    if (head->getData() == "Error") {
+        return "Error";
+    }
+
     // in fix expression
     string expression = DFS(head);  
     
@@ -81,6 +88,24 @@ string PrefixExpression::calculate() {
 
 PrefixExpression::PrefixExpression(string operation)
 {
+    // check for valid operation
+    int opCount = 0;
+    int numCount = 0;
+
+    for (unsigned int i = 0; i < operation.length(); i++) {
+        if (operation[i] == '+' || operation[i] == '-' || operation[i] == '/' || operation[i] == '*') {
+            opCount++;
+        }
+        else if (operation[i] != '(' && operation[i] != ')' && operation[i] != ')' && operation[i] != ' ' ){
+            numCount++;
+        }
+    }
+    if (opCount != numCount -1) {
+        Node * errorNode = new Node("Error", NULL, NULL);
+        head = errorNode;
+        return;
+    }
+
     // loop through operation to create the binary tree structure add to stack, if number remove and make node
     for (unsigned int i = 0; i < operation.length(); i++) {
         // create stack
@@ -90,8 +115,6 @@ PrefixExpression::PrefixExpression(string operation)
         stack.push(newNode);
         }
     }
-
-    // current stack = "756-*"
 
     while (!stack.isEmpty()) {
         Node * currentNode = stack.pop();// *
@@ -112,5 +135,6 @@ PrefixExpression::PrefixExpression(string operation)
     // tree stack1 should only have 1 item in it, if not then it is an invalid expression
     Node * tree = stack2.pop(); //[-]
     head = tree;
+
     return;
 }
