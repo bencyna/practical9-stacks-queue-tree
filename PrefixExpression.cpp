@@ -74,7 +74,7 @@ string PrefixExpression::calculate() {
     
     int result = calculateHelper(head);
 
-    cout << result << endl;
+    expression = expression + " = " + to_string(result);
 
     return expression;
 }
