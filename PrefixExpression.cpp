@@ -2,6 +2,7 @@
 #include <cstddef>
 // #include <iostream>
 
+
 using namespace std;
 
 string DFS(Node * currentNode) {
@@ -19,11 +20,28 @@ string DFS(Node * currentNode) {
     return DFS(currentNode->getLeft()) + currentNodeData + DFS(currentNode->getRight());
 }
 
+int toInt(string num) {
+    int number = 0;
+    // check if number inum negative
+    if (num[0] != '-') {
+        for (int i = 0; i < num.length(); i++) {
+            number = number*10 + (stoi(num));
+        }
+    }
+    // if number is negatuve, calculate the positive number and then invert at end
+    else {
+        for (int i = 1; i < num.length(); i++) {
+            number = number*10 + (stoi(num));
+        }
+        number = number*-1;
+    }
+    return number;
+}
+
 string PrefixExpression::calculate() {
     // in fix expression
     string expression = DFS(head);  
     
-    // use queue to create a new expression in int value using shunting yard algorithm
 
 
 
