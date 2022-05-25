@@ -24,13 +24,13 @@ int toInt(string num) {
     int number = 0;
     // check if number inum negative
     if (num[0] != '-') {
-        for (int i = 0; i < num.length(); i++) {
+        for (unsigned int i = 0; i < num.length(); i++) {
             number = number*10 + (stoi(num));
         }
     }
     // if number is negatuve, calculate the positive number and then invert at end
     else {
-        for (int i = 1; i < num.length(); i++) {
+        for (unsigned int i = 1; i < num.length(); i++) {
             number = number*10 + (stoi(num));
         }
         number = number*-1;
@@ -82,7 +82,7 @@ string PrefixExpression::calculate() {
 PrefixExpression::PrefixExpression(string operation)
 {
     // loop through operation to create the binary tree structure add to stack, if number remove and make node
-    for (int i = 0; i < operation.length(); i++) {
+    for (unsigned int i = 0; i < operation.length(); i++) {
         // create stack
         if (operation[i] != ' ') {
         std::string itemAsString(1, operation[i]);
