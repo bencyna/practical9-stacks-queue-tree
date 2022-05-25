@@ -38,8 +38,16 @@ int toInt(string num) {
     return number;
 }
 
-int calculateHelper(Node * head) {
-    return 1;
+int calculateHelper(Node * node) {
+    // check for empty tree
+    if (!node) {
+        return 0;
+    }
+
+    // node is int
+    if (!node->getLeft() && !node->getRight()) {
+        return toInt(node->getData());
+    }
 }
 
 string PrefixExpression::calculate() {
