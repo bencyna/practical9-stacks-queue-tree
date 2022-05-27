@@ -23,7 +23,7 @@ int main() {
 
     // input goes into function in prefixExpresssion
 
-    // Function returns the correct value for
+    // Function returns the correct value fors
 
     return 0; 
 }

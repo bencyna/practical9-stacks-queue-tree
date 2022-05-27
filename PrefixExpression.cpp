@@ -106,11 +106,18 @@ PrefixExpression::PrefixExpression(string operation)
         return;
     }
 
+    // my function only accounts for single digits
     // loop through operation to create the binary tree structure add to stack, if number remove and make node
     for (unsigned int i = 0; i < operation.length(); i++) {
         // create stack
+        int numLength=1;
         if (operation[i] != ' ') {
-        std::string itemAsString(1, operation[i]);
+        if (isdigit(operation[i+1])) {
+
+            numLength ++;
+            i++;
+        }
+        std::string itemAsString(numLength, operation[i]);
         Node * newNode = new Node(itemAsString, NULL, NULL);
         stack.push(newNode);
         }
